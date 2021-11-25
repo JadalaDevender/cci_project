@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.48.2'
+project:
+    name: Run
+    package:
+        name: Dev
+        api_version: '52.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Run/tests
+            options:
+                outputdir: robot/Run/results
+
+    robot_testdoc:
+        options:
+            path: robot/Run/tests
+            output: robot/Run/doc/Run_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
